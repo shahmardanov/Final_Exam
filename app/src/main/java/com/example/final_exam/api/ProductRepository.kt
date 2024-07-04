@@ -1,7 +1,6 @@
 package com.example.test.api
 
 import android.util.Log
-import com.example.final_exam.model.ProductResponse
 import com.example.final_exam.model.ProductResponseItem
 import com.example.test.local.ProductDao
 import kotlinx.coroutines.Dispatchers

@@ -1,7 +1,6 @@
 package com.example.test.api
 
 import com.example.final_exam.model.ProductResponse
-import com.example.final_exam.model.ProductResponseItem
 import retrofit2.Response
 import retrofit2.http.GET
 
