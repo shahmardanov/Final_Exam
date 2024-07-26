@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.final_exam.model.CoffeeItem
 import com.example.final_exam.model.ProductResponseItem
 import com.example.test.api.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,8 +19,8 @@ class HomeViewModel @Inject constructor(
     private val productRepository: ProductRepository
 ) : ViewModel() {
 
-    private var _data = MutableLiveData<List<ProductResponseItem>>()
-    val data: LiveData<List<ProductResponseItem>> get() = _data
+    private var _data = MutableLiveData<List<CoffeeItem>>()
+    val data: LiveData<List<CoffeeItem>> get() = _data
 
     private var _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
@@ -48,7 +49,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun addProduct(productResponse: ProductResponseItem){
+    fun addProduct(productResponse: CoffeeItem){
         viewModelScope.launch(Dispatchers.IO) {
             productRepository.addProductsLocal(productResponse)
         }

@@ -1,6 +1,7 @@
 package com.example.test.api
 
 import android.util.Log
+import com.example.final_exam.model.CoffeeItem
 import com.example.final_exam.model.ProductResponseItem
 import com.example.test.local.ProductDao
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +16,7 @@ class ProductRepository @Inject constructor(
 
     suspend fun getProduct() = apiService.getAllProducts()
 
-    fun addProductsLocal(productResponse: ProductResponseItem) =
+    fun addProductsLocal(productResponse: CoffeeItem) =
         productDao.addProducts(productResponse)
 
 

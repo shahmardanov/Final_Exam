@@ -3,6 +3,7 @@ package com.example.test.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.final_exam.model.CoffeeItem
 import com.example.final_exam.model.ProductResponse
 import com.example.final_exam.model.ProductResponseItem
 import com.example.test.api.ProductRepository
@@ -14,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class FavViewModel @Inject constructor(val repository: ProductRepository) : ViewModel() {
 
-    val favList = MutableLiveData<List<ProductResponseItem>>()
+    val favList = MutableLiveData<List<CoffeeItem>>()
 
     fun getLocalProduct() {
         viewModelScope.launch {

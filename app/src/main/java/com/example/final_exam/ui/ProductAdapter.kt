@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.final_exam.databinding.ItemProductBinding
+import com.example.final_exam.model.CoffeeItem
 import com.example.final_exam.model.ProductResponse
 import com.example.final_exam.model.ProductResponseItem
 
 class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
-    private val productList = arrayListOf<ProductResponseItem>()
-    lateinit var onClickItem: (ProductResponseItem) -> Unit
+    private val productList = arrayListOf<CoffeeItem>()
+    lateinit var onClickItem: (CoffeeItem) -> Unit
 
     inner class ProductViewHolder(val itemProduct: ItemProductBinding) :
         RecyclerView.ViewHolder(itemProduct.root)
@@ -37,7 +38,7 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() 
         }
     }
 
-    fun updateList(newList: List<ProductResponseItem>) {
+    fun updateList(newList: List<CoffeeItem>) {
         productList.clear()
         productList.addAll(newList)
         notifyDataSetChanged()

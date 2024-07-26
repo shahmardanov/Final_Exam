@@ -21,7 +21,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("https://fakestoreapi.com/")
+        return Retrofit.Builder().baseUrl("https://fake-coffee-api.vercel.app/")
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
@@ -40,7 +40,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideRoomDB(@ApplicationContext context: Context): DataBase {
-        return Room.databaseBuilder(context, DataBase::class.java, "local_db").build()
+        return Room.databaseBuilder(context, DataBase::class.java, "app_db").build()
     }
 
 }
